@@ -24,38 +24,42 @@ for (int i = 0; i < Founds.Count; i++)
 }
 
 //helper method to see all Metadata Showing Directory and Tag incase extra information is required
-static void PrintExif(string imagePath){
+static void PrintExif(string imagePath)
+{
     IEnumerable<MetadataExtractor.Directory> directories = ImageMetadataReader.ReadMetadata(imagePath);
     foreach (var directory in directories)
-    foreach (var tag in directory.Tags)
-        Console.WriteLine($"{directory.Name} - {tag.Name} = {tag.Description}");
+        foreach (var tag in directory.Tags)
+            Console.WriteLine($"{directory.Name} - {tag.Name} = {tag.Description}");
 }
 
 //helper method to convert dates 
-static string FormatDate(string input){
-    DateTime PartialDate = DateTime.ParseExact(input,"yyyy:MM:dd HH:mm:ss",CultureInfo.InvariantCulture);
+static string FormatDate(string input)
+{
+    DateTime PartialDate = DateTime.ParseExact(input, "yyyy:MM:dd HH:mm:ss", CultureInfo.InvariantCulture);
     return PartialDate.ToString("yyyy-MM-dd");
-  
+
 }
 
 //Loads all the file paths you are looking for, this version is setup to look for NEF and RAF files, adjustments might be needed for other types
-static List<string> GetFiles(string root){
+static List<string> GetFiles(string root)
+{
     List<string> Files = new List<string>();
 
-    var result = Directorio.EnumerateFiles(root, "*.NEF", 
-        SearchOption.AllDirectories).Union(Directorio.EnumerateFiles(root, "*.RAF", 
+    var result = Directorio.EnumerateFiles(root, "*.NEF",
+        SearchOption.AllDirectories).Union(Directorio.EnumerateFiles(root, "*.RAF",
         SearchOption.AllDirectories));
 
     foreach (var file in result)
     {
-       Files.Add(file);
+        Files.Add(file);
     }
 
     return Files;
 }
 
 //Looks for Exif Information only, to extend a navigation through all the directories in the structure
-static string GetTag(string imagepath,int type){
+static string GetTag(string imagepath, int type)
+{
     IEnumerable<MetadataExtractor.Directory> info = ImageMetadataReader.ReadMetadata(imagepath);
 
     MetadataExtractor.Directory exifInfo = info.Where(E => E.Name == "Exif IFD0")
