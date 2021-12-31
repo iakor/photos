@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "Vt03woFF5xar5a91VofU0wuHPjy/EEXmQoNcaVROIZ8Z2j/tWs05o8kIwRWKW2nt/LxrZki+lQgx5al0YBuYhQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\luis\\Documents\\photos\\photos.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\luis\\.nuget\\packages\\metadataextractor\\2.7.1\\metadataextractor.2.7.1.nupkg.sha512",
+    "C:\\Users\\luis\\.nuget\\packages\\microsoft.netcore.platforms\\2.1.2\\microsoft.netcore.platforms.2.1.2.nupkg.sha512",
+    "C:\\Users\\luis\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\4.5.2\\system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "C:\\Users\\luis\\.nuget\\packages\\system.text.encoding.codepages\\4.5.1\\system.text.encoding.codepages.4.5.1.nupkg.sha512",
+    "C:\\Users\\luis\\.nuget\\packages\\xmpcore\\6.1.10.1\\xmpcore.6.1.10.1.nupkg.sha512"
+  ],
+  "logs": []
+}
